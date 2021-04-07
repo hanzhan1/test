@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: funcs
+
+# Controls when the action will run. 
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Prepare tools
+        run: |
+          - export AnException=0
+          - export AnotherException=101
+          - function catch(){ 
+          -   export ex_code=$?; 
+          -   (( $SAVED_OPT_E )) && set +e;
+          -   echo "exit code is $ex_code";
+          -   return $ex_code;}
+          - function try(){
+          -   if [[ $- = *e* ]]; then export SAVED_OPT_E=$?; fi
+          -   echo "start try"
+          -   set +e;}
+          - function throw(){
+          -   exit $1;}
+          - function throwErrors(){
+          -   set -e;}
+          - function ignoreErrors(){
+          -   set +e;}
+        -   set +e;}
