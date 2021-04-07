@@ -19,7 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: hanzhan1/test/.github/actions/funcs@main
+      - uses: ./.github/actions/funcs@main
       - name: call func
         run: |
             try(
