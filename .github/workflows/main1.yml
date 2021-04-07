@@ -18,10 +18,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: call func
       - uses: actions/checkout@v2
       - uses: ./.github/actions/hanzhan1/test/funcs
-          run:|
+      - name: call func
+          run: |
             try(
             echo "1";)
             catch || echo "catch"
