@@ -36,4 +36,3 @@ jobs:
           -   set -e;}
           - function ignoreErrors(){
           -   set +e;}
-        -   set +e;}
