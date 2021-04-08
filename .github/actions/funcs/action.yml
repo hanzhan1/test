@@ -11,3 +11,4 @@ runs:
         export AnException=0
         export AnotherException=101
         echo "1"
+        echo $FIRST_NAME
