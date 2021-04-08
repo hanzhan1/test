@@ -22,9 +22,13 @@ jobs:
       - name: checkout
         run: |
           export TEST_ENV='ZH'
+          ls
+          mkdir zh-test
       - name: call func
         run: |
             echo "$TEST_ENV"
             export TEST2_ENV='SS'
             echo $TEST2_ENV
+            ls
+            cd zh-test
 
