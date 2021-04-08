@@ -25,4 +25,6 @@ jobs:
       - name: call func
         run: |
             echo "$TEST_ENV"
+            export TEST2_ENV='SS'
+            echo $TEST2_ENV
 
