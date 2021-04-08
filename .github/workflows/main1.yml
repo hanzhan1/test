@@ -19,11 +19,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v1
-        name: checkout
-      - uses: ./.github/actions/funcs
+      - name: checkout
+        run: |
+          export TEST_ENV='ZH'
       - name: call func
         run: |
-            try(
-            echo "1";)
-            catch || echo "catch"
+            echo $TEST_ENV
 
