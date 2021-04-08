@@ -14,7 +14,11 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+        MY_VAR: Hi there! My name is
+        FIRST_NAME: Mona
+        MIDDLE_NAME: The
+        LAST_NAME: Octocat
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -24,6 +28,7 @@ jobs:
           export TEST_ENV='ZH'
           ls
           mkdir zh-test
+          export $FIRST_NAME='HAN'
       - name: call func
         run: |
             echo "$TEST_ENV"
@@ -31,4 +36,5 @@ jobs:
             echo $TEST2_ENV
             ls
             cd zh-test
+            echo $FIRST_NAME
 
